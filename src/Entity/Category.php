@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 #[ORM\Table(name: 'categories')]
 #[ORM\Index(name: 'categories__id__index', columns: ['id'])]
-class Category
+final class Category
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

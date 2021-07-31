@@ -13,12 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 trait TimestampTrait
 {
     #[ORM\Column(name: 'create_at', type: 'datetime')]
-    private DateTimeInterface $createdAt;
+    private ?DateTimeInterface $createdAt;
 
     #[ORM\Column(name: 'updated_at', type: 'datetime')]
-    private DateTimeInterface $updatedAt;
+    private ?DateTimeInterface $updatedAt;
 
-    public function getCreatedAt(): DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
@@ -31,7 +31,7 @@ trait TimestampTrait
         return $this;
     }
 
-    public function getUpdatedAt(): DateTimeInterface
+    public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }

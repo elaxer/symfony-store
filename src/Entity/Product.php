@@ -16,7 +16,8 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'products')]
 #[ORM\Index(name: 'products__id__index', columns: ['id'])]
 #[ORM\Index(name: 'products__subcategory_id__index', columns: ['subcategory_id'])]
-class Product
+#[ORM\HasLifecycleCallbacks]
+final class Product
 {
     use TimestampTrait;
 

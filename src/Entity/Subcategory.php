@@ -16,7 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'subcategories')]
 #[ORM\Index(name: 'subcategories__id__index', columns: ['id'])]
 #[ORM\Index(name: 'subcategories__category_id__index', columns: ['category_id'])]
-class Subcategory
+final class Subcategory
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
