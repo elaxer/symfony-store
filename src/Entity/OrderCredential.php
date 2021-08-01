@@ -18,7 +18,7 @@ final class OrderCredential
     use CustomerCredentialTrait;
 
     #[ORM\Id]
-    #[ORM\GeneratedValue]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     #[ORM\Column(type: 'integer')]
     private ?int $id;
 

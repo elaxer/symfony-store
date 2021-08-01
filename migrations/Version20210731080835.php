@@ -11,7 +11,7 @@ final class Version20210731080835 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Добавляет к таблицам images, products поля created_at, updated_at';
     }
 
     public function up(Schema $schema): void

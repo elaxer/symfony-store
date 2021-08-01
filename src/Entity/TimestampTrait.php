@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use DateTimeImmutable;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,7 +24,6 @@ trait TimestampTrait
         return $this->createdAt;
     }
 
-    #[ORM\PrePersist]
     public function setCreatedAt(DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
@@ -36,11 +36,23 @@ trait TimestampTrait
         return $this->updatedAt;
     }
 
-    #[ORM\PreUpdate]
     public function setUpdatedAt(DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function setDefaultCreatedAt()
+    {
+        $this->createdAt = new DateTimeImmutable();
+    }
+
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function setDefaultUpdatedAt()
+    {
+        $this->updatedAt = new DateTimeImmutable();
     }
 }

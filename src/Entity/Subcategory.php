@@ -19,7 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
 final class Subcategory
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     #[ORM\Column(type: 'integer')]
     private ?int $id;
 
